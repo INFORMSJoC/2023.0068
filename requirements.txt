@@ -1,0 +1,6 @@
+gurobipy
+numpy
+pandas
+networkx
+scikit-learn
+matplotlib
