@@ -2,7 +2,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import time, csv, os, getopt, sys
 from dl85 import DL85Classifier
-import UTILS as OU
+from src import UTILS as OU
 
 
 def main(argv):

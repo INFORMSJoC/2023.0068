@@ -1,11 +1,42 @@
-Copyright 2023 Brandon C. Alston, Hamidreza Validi, Illya V. Hicks
-
 # Optimal Binary Classification Trees
 
 Code for the paper ["Mixed Integer Linear Optimization Formulations for Learning Optimal Binary Classification Trees"](http://arxiv.org/abs/2206.04857) by Brandon Alston, Hamidreza Validi, and Illya V. Hicks.
 
-This code uses [python3.x](https://www.python.org/downloads/) (version 3.6 and higher) and requires the [Gurobi](https://www.gurobi.com/) solver. Required python3.x packages are outlined in `requirements.txt`.
+This code uses [python3.x](https://www.python.org/downloads/) (version 3.6 and higher) and requires the [Gurobi](https://www.gurobi.com/) solver (version 9 and higher). Required python3.x packages are outlined in `requirements.txt`.
 
+This archive is distributed in association with the [INFORMS Journal on
+Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](LICENSE).
+
+The software and data in this repository are a snapshot of the software and data
+that were used in the research reported on in the paper 
+["Mixed Integer Linear Optimization Formulations for Learning Optimal Binary Classification Trees"](http://arxiv.org/abs/2206.04857) by Brandon Alston, Hamidreza Validi, and Illya V. Hicks. 
+The snapshot is based on 
+[this SHA](https://github.com/tkralphs/JoCTemplate/commit/f7f30c63adbcb0811e5a133e1def696b74f3ba15) 
+in the development repository. 
+
+**Important: This code is being developed on an on-going basis at https://github.com/brandalston/2023.0068. Please go there if you would like to get a more recent version or would like support.**
+
+## Cite
+
+To cite the contents of this repository, please cite both the paper and this repo, using their respective DOIs.
+
+<!--https://doi.org/10.1287/ijoc.2023.0068-->
+
+<!--https://doi.org/10.1287/ijoc.2023.0068.cd-->
+
+Below is the BibTex for citing this snapshot of the repository.
+
+```
+@misc{ijoc.2023.0068,
+  author =        {B. Alston, H. Validi, I.V. Hicks},
+  publisher =     {INFORMS Journal on Computing},
+  title =         {Mixed Integer Linear Optimization Formulations for Learning Optimal Binary Classification Trees},
+  year =          {2023},
+  doi =           {10.1287/ijoc.2023.0068.cd},
+  url =           {https://github.com/INFORMSJoC/2023.0068},
+  note =          {Available for download at https://github.com/INFORMSJoC/2023.0068},
+}  
+```
 *** 
 ***
 
@@ -48,7 +79,8 @@ Note:
 Call the `model_runs.py` `main` function within a python file as follows to generate a model ignorning our second objective,
 
 ```python
-import model_runs
+
+from src import model_runs
 
 data_names = ['soybean_small', 'monk3', 'car', 'iris', 'climate']
 heights = [3, 4, 5]
@@ -73,14 +105,15 @@ python3 import model_runs; model_runs.main -d ['soybean-small','monk3','car','ir
 Call the `multiobj` function within a python file as follows to generate a model using the heirarchical modeling capabilities of Gurobi
 
 ```python
-import model_runs
+
+from src import model_runs
 
 data_names = ['ionosphere', 'monk2', 'breat_cancer', 'climate']
 height = 5
 models = ['SCF', 'MCF', 'POKE-ALL', 'CUT-FRAC-3']
 time_limit = 3600
 rand_seed = [13, 58, 94, None]
-priorities = ['data','equal']
+priorities = ['data', 'equal']
 file = 'biobj_example.csv'
 consol_log = False
 model_runs.multiobj(
@@ -110,7 +143,8 @@ We assume `-f file` is located in the `\results_files` folder
 You can generate pareto frontiers from within a python file as follows,
 
 ```python
-import model_runs
+
+from src import model_runs
 
 height = 4
 models = ['FlowOCT', 'SCF', 'MCF', 'POKE', 'CUT']
@@ -139,14 +173,10 @@ To recreate all results found in the paper ["Mixed Integer Linear Optimization F
 ***
 
 ## Acknowledgments
-The code found in `BendersOCT.py`, `FlowOCT.py`, `FlowOCTTree.py,` and `FlowOCTutils.py` are taken directly from the [Strong Tree](https://github.com/pashew94/StrongTree/) GitHub public repository.
+The code found in `BendersOCT.py`, `FlowOCT.py`, `FlowOCTTree.py,` and `FlowOCTutils.py` are taken directly from the [Strong Tree](https://github.com/D3M-Research-Group/StrongTree/tree/master) GitHub public repository.
 The code found in `Quant-BnB-2D.jl`, `Quant-BnB-3D.jl`, `Algorithms.jl`, `lowerbound_middle.jl` are taken directly from the [Quant-BnB](https://github.com/mengxianglgal/Quant-BnB) GitHub public repository.
 
-All rights and ownership are to the original owners. 
-
-
-JOC-2023-03-OA-0068
-***
+All rights and ownership are to the original owners.
 ***
 
 ![Screenshot](cmor_logo.png)

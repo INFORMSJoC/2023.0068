@@ -11,7 +11,7 @@ import time, pathlib, csv, getopt, sys, os
 from sklearn.ensemble import GradientBoostingClassifier
 from gosdt.model.threshold_guess import compute_thresholds, cut
 from gosdt.model.gosdt import GOSDT
-import UTILS as OU
+from src import UTILS as OU
 
 
 def main(argv):

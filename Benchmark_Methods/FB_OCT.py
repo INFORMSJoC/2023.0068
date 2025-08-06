@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 import os, time, getopt, sys, csv
 import pandas as pd
 import numpy as np
-import UTILS
+from src import UTILS
 
 
 def main(argv):
