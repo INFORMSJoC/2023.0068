@@ -1,7 +1,7 @@
 '''
 This file is the implementation of the FlowOCT model found in the paper ''[Strong Optimal Classification Trees](https://sites.google.com/view/sina-aghaei/home)''.
-and publicly available on https://github.com/pashew94/StrongTree/Code/StrongTree/FlowOCT.py
-Code is taken directly from https://github.com/pashew94/StrongTree/Code/StrongTree/FlowOCT.py
+and publicly available on https://github.com/D3M-Research-Group/StrongTree/tree/master/Code/StrongTree
+Code is taken directly from https://github.com/D3M-Research-Group/StrongTree/tree/master/Code/StrongTree
 All rights and ownership are to the original owners.
 
 This module formulates the FlowOCT problem in gurobipy.

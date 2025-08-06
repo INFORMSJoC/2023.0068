@@ -1,7 +1,7 @@
 '''
 This file is the implementation of the Tree.py utility file for the tree structure of ''[Strong Optimal Classification Trees](https://sites.google.com/view/sina-aghaei/home)''.
-and publically available on https://github.com/pashew94/StrongTree/Code/StrongTree/Tree.py
-Code is taken directly from https://github.com/pashew94/StrongTree/Code/StrongTree/Tree.py
+and publically available on https://github.com/D3M-Research-Group/StrongTree/tree/master/Code/StrongTree
+Code is taken directly from https://github.com/D3M-Research-Group/StrongTree/tree/master/Code/StrongTree
 All rights and ownership are to the original owners.
 
 In this class we create a structure to hold the classification/regression tree.
