@@ -1,5 +1,0 @@
-Brandon Alston <bca3@rice.edu>
-
-Hamidreza Validi <hvalidi@ttu.edu>
-
-Illya V. Hicks <ivhicks@rice.edu>
