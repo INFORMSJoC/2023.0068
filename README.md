@@ -1,18 +1,13 @@
+[![INFORMS Journal on Computing Logo](https://INFORMSJoC.github.io/logos/INFORMS_Journal_on_Computing_Header.jpg)](https://pubsonline.informs.org/journal/ijoc)
+
 # Optimal Binary Classification Trees
-
-Code for the paper ["Mixed Integer Linear Optimization Formulations for Learning Optimal Binary Classification Trees"](http://arxiv.org/abs/2206.04857) by Brandon Alston, Hamidreza Validi, and Illya V. Hicks.
-
-This code uses [python3.x](https://www.python.org/downloads/) (version 3.6 and higher) and requires the [Gurobi](https://www.gurobi.com/) solver (version 9 and higher). Required python3.x packages are outlined in `requirements.txt`.
 
 This archive is distributed in association with the [INFORMS Journal on
 Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](LICENSE).
 
 The software and data in this repository are a snapshot of the software and data
 that were used in the research reported on in the paper 
-["Mixed Integer Linear Optimization Formulations for Learning Optimal Binary Classification Trees"](http://arxiv.org/abs/2206.04857) by Brandon Alston, Hamidreza Validi, and Illya V. Hicks. 
-The snapshot is based on 
-[this SHA](https://github.com/tkralphs/JoCTemplate/commit/f7f30c63adbcb0811e5a133e1def696b74f3ba15) 
-in the development repository. 
+[Mixed Integer Linear Optimization Formulations for Learning Optimal Binary Classification Trees](https://doi.org/10.1287/ijoc.2023.0068) by Brandon Alston, Hamidreza Validi, and Illya V. Hicks. 
 
 **Important: This code is being developed on an on-going basis at https://github.com/brandalston/2023.0068. Please go there if you would like to get a more recent version or would like support.**
 
@@ -20,9 +15,9 @@ in the development repository.
 
 To cite the contents of this repository, please cite both the paper and this repo, using their respective DOIs.
 
-<!--https://doi.org/10.1287/ijoc.2023.0068-->
+https://doi.org/10.1287/ijoc.2023.0068
 
-<!--https://doi.org/10.1287/ijoc.2023.0068.cd-->
+https://doi.org/10.1287/ijoc.2023.0068.cd
 
 Below is the BibTex for citing this snapshot of the repository.
 
@@ -31,14 +26,12 @@ Below is the BibTex for citing this snapshot of the repository.
   author =        {B. Alston, H. Validi, I.V. Hicks},
   publisher =     {INFORMS Journal on Computing},
   title =         {Mixed Integer Linear Optimization Formulations for Learning Optimal Binary Classification Trees},
-  year =          {2023},
+  year =          {2025},
   doi =           {10.1287/ijoc.2023.0068.cd},
   url =           {https://github.com/INFORMSJoC/2023.0068},
   note =          {Available for download at https://github.com/INFORMSJoC/2023.0068},
 }  
 ```
-*** 
-***
 
 ## Summary of Repository
 - `OBCT.py` contains the formulations of each model for solving using Gurobi9.x
@@ -52,10 +45,10 @@ Below is the BibTex for citing this snapshot of the repository.
 - `Datasets/` folder contains the datasets used for generating experimental results
   - Note: `Datasets/` should also be used as the folder where user dataset files are stored
   - Note that ``POKE`` is equivalent to ``CUT_W`` in the paper. We invoke a different name in implementation due to the similarity in parsing the strings ``CUT, CUT_W``.
-***
-***
 
 ## Running Code
+
+This code uses [python3.x](https://www.python.org/downloads/) (version 3.6 and higher) and requires the [Gurobi](https://www.gurobi.com/) solver (version 9 and higher). Required python3.x packages are outlined in `requirements.txt`.
 
 - Ensure the latest versions of the packages in `requirements.txt` are installed
 - For an instance of `OBCT` run with one of the functions in `model_runs.py` we use following arguments (not all functional call parameters apply to all functions)
@@ -75,11 +68,9 @@ Note:
 - `-e model_extras`, `-p priorities`, and `-f file` may be `None` input arguments, all others must hold a valid value
 - If results output file `-f file` is `None` the `models_run.py` calls automatically generates a `.csv` results file with the parameters of the function call as the file name saved to the `\results_files` folder
 
-***
 Call the `model_runs.py` `main` function within a python file as follows to generate a model ignorning our second objective,
 
 ```python
-
 from src import model_runs
 
 data_names = ['soybean_small', 'monk3', 'car', 'iris', 'climate']
@@ -100,12 +91,11 @@ To run from terminal do the following,
 python3 import model_runs; model_runs.main -d ['soybean-small','monk3','car','iris','climate'] -h [3,4,5] -m ['SCF','MCF','POKE-ALL','CUT-FRAC-3'] -t 3600 -e ['max_features-25'] -r [13, 58, 94, None] -c False -f 'test_results.csv' -l False
 ```
 
-***
 ## Bi-objective Modeling
+
 Call the `multiobj` function within a python file as follows to generate a model using the heirarchical modeling capabilities of Gurobi
 
 ```python
-
 from src import model_runs
 
 data_names = ['ionosphere', 'monk2', 'breat_cancer', 'climate']
@@ -125,7 +115,6 @@ To run from terminal do the following,
 python3 import model_runs; model_runs.multiobj -d ['ionosphere', 'monk2', 'breat_cancer', 'climate'] -h 5 -m ['SCF','MCF','POKE-ALL','CUT-FRAC-3'] -t 3600 -p ['data','equal'] -r [13, 58, 94, None] -f 'biobj_example.csv' -l False
 ```
 
-***
 ## Pareto Frontier
 To generate the Pareto frontier call the `main` function in `pareto_runs.py` with the below parameters:
   - d : str list, names of dataset files
@@ -143,7 +132,6 @@ We assume `-f file` is located in the `\results_files` folder
 You can generate pareto frontiers from within a python file as follows,
 
 ```python
-
 from src import model_runs
 
 height = 4
@@ -159,24 +147,22 @@ To run from terminal do the following
 python3 import model_runs; model_runs.pareto -d ['hayes_roth', 'house_votes_84'] -h 4 -m ['FOCT', 'SCF', 'MCF', 'POKE', 'CUT'] -t 3600 -r [15, 78, 0] -f 'pareto_example.csv'
 ```
 - Note: `FlowOCT` must be the model name to generate the pareto frontier of FlowOCT
-***
 
 ## Models Functionality
+
 For understanding model functionality associated with integer and fractional separation procedures in **POKE** and **CUT** models, `-e model_extras` and `-c tuning` functionality please refer to the `USAGE.md` file. 
 
-
 `example_code.py` contains additional instances of the above and how to call `OBCT` directly without using `model_runs.py`
-***
 
-## Recreation of Experiments in ["Mixed Integer Linear Optimization Formulations for Learning Optimal Binary Classification Trees"](http://arxiv.org/abs/2206.04857)
-To recreate all results found in the paper ["Mixed Integer Linear Optimization Formulations for Learning Optimal Binary Classification Trees"](http://arxiv.org/abs/2206.04857) run the `paper_results.py` script.
-***
+## Recreation of Experiments
+
+To recreate all results found in the paper, run the `paper_results.py` script.
 
 ## Acknowledgments
+
 The code found in `BendersOCT.py`, `FlowOCT.py`, `FlowOCTTree.py,` and `FlowOCTutils.py` are taken directly from the [Strong Tree](https://github.com/D3M-Research-Group/StrongTree/tree/master) GitHub public repository.
 The code found in `Quant-BnB-2D.jl`, `Quant-BnB-3D.jl`, `Algorithms.jl`, `lowerbound_middle.jl` are taken directly from the [Quant-BnB](https://github.com/mengxianglgal/Quant-BnB) GitHub public repository.
 
 All rights and ownership are to the original owners.
-***
 
 ![Screenshot](cmor_logo.png)
