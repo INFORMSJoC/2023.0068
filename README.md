@@ -6,8 +6,8 @@ This archive is distributed in association with the [INFORMS Journal on
 Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](LICENSE).
 
 The software and data in this repository are a snapshot of the software and data
-that were used in the research reported on in the paper 
-[Mixed Integer Linear Optimization Formulations for Learning Optimal Binary Classification Trees](https://doi.org/10.1287/ijoc.2023.0068) by Brandon Alston, Hamidreza Validi, and Illya V. Hicks. 
+that were used in the research reported on in the paper
+[Mixed Integer Linear Optimization Formulations for Learning Optimal Binary Classification Trees](https://doi.org/10.1287/ijoc.2023.0068) by Brandon Alston, Hamidreza Validi, and Illya V. Hicks.
 
 **Important: This code is being developed on an on-going basis at https://github.com/brandalston/2023.0068. Please go there if you would like to get a more recent version or would like support.**
 
@@ -30,7 +30,7 @@ Below is the BibTex for citing this snapshot of the repository.
   doi =           {10.1287/ijoc.2023.0068.cd},
   url =           {https://github.com/INFORMSJoC/2023.0068},
   note =          {Available for download at https://github.com/INFORMSJoC/2023.0068},
-}  
+}
 ```
 
 ## Summary of Repository
@@ -142,7 +142,7 @@ file = 'pareto_example.csv'
 model_runs.pareto(["-d", data_names, "-h", height, "-m", models, "-t", 3600, "-r", rand_states, "-f", file])
 ```
 
-To run from terminal do the following 
+To run from terminal do the following
 ```bash
 python3 import model_runs; model_runs.pareto -d ['hayes_roth', 'house_votes_84'] -h 4 -m ['FOCT', 'SCF', 'MCF', 'POKE', 'CUT'] -t 3600 -r [15, 78, 0] -f 'pareto_example.csv'
 ```
@@ -150,19 +150,12 @@ python3 import model_runs; model_runs.pareto -d ['hayes_roth', 'house_votes_84']
 
 ## Models Functionality
 
-For understanding model functionality associated with integer and fractional separation procedures in **POKE** and **CUT** models, `-e model_extras` and `-c tuning` functionality please refer to the `USAGE.md` file. 
+For understanding model functionality associated with integer and fractional separation procedures in **POKE** and **CUT** models, `-e model_extras` and `-c tuning` functionality please refer to the `USAGE.md` file.
 
 `example_code.py` contains additional instances of the above and how to call `OBCT` directly without using `model_runs.py`
 
 ## Recreation of Experiments
 
 To recreate all results found in the paper, run the `paper_results.py` script.
-
-## Acknowledgments
-
-The code found in `BendersOCT.py`, `FlowOCT.py`, `FlowOCTTree.py,` and `FlowOCTutils.py` are taken directly from the [Strong Tree](https://github.com/D3M-Research-Group/StrongTree/tree/master) GitHub public repository.
-The code found in `Quant-BnB-2D.jl`, `Quant-BnB-3D.jl`, `Algorithms.jl`, `lowerbound_middle.jl` are taken directly from the [Quant-BnB](https://github.com/mengxianglgal/Quant-BnB) GitHub public repository.
-
-All rights and ownership are to the original owners.
 
 ![Screenshot](cmor_logo.png)
