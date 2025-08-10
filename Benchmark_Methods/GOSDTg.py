@@ -1,10 +1,3 @@
-'''
-This file is the implementation of the GOSDT+guesses model found in the paper ''[Generalized and Scalable Optimal Sparse Decision Trees](http://proceedings.mlr.press/v119/lin20g/lin20g.pdf)''.
-and publicly available on https://pypi.org/project/gosdt/
-Code is taken directly from https://pypi.org/project/gosdt/
-All rights and ownership are to the original owners.
-'''
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import time, pathlib, csv, getopt, sys, os
