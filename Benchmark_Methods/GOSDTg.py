@@ -1,12 +1,8 @@
 '''
-# StrongTree
-
-To reproduce our experiments, replace the files in this directory with the
-copies from those in [ubc-systopia/gosdt-guesses](https://github.com/ubc-systopia/gosdt-guesses/tree/main).
-
-We do not redistribute them here because the original authors have not released
-their code under an open-source license.
-
+This file is the implementation of the GOSDT+guesses model found in the paper ''[Generalized and Scalable Optimal Sparse Decision Trees](http://proceedings.mlr.press/v119/lin20g/lin20g.pdf)''.
+and publicly available on https://pypi.org/project/gosdt/
+Code is taken directly from https://pypi.org/project/gosdt/
+All rights and ownership are to the original owners.
 '''
 
 import pandas as pd
